@@ -5,6 +5,12 @@ on:
     branches:
       - main # 每次向 main 分支 push 时触发
 
+# 给整个工作流赋予完全的部署权限，专门解决 id-token 报错
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
